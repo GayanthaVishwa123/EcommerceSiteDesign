@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - Pizza & Burger Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8fafc;
+        padding: 2rem;
+        color: #1f2937;
+        margin: 0;
+      }
+
+      h2 {
+        text-align: center;
+        color: #dc2626;
+        margin-bottom: 2rem;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      ul#cart-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .remove-btn {
+        background-color: #ef4444;
+        color: white;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .remove-btn:hover {
+        background-color: #b91c1c;
+      }
+
+      .total {
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+
+      .payment-section {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .payment-section h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #111827;
+      }
+
+      label {
+        font-weight: 500;
+        margin-top: 0.8rem;
+        display: block;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.3rem;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .card-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .actions {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .actions a,
+      .actions button {
+        text-decoration: none;
+        background-color: #1f2937;
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        margin: 0.5rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .actions a:hover,
+      .actions button:hover {
+        background-color: #111827;
+      }
+
+      @media (max-width: 600px) {
+        .card-fields {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <div class="total" id="total-price">Total: $0.00</div>
+
+      <div class="payment-section">
+        <h3>Payment Method</h3>
+        <label for="payment-method">Choose a method:</label>
+        <select id="payment-method">
+          <option value="card">Credit / Debit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="cod">Cash on Delivery</option>
+        </select>
+
+        <div id="card-details">
+          <label for="card-number">Card Number</label>
+          <input
+            type="text"
+            id="card-number"
+            placeholder="1234 5678 9012 3456"
+          />
+
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" placeholder="John Doe" />
+
+          <div class="card-fields">
+            <div>
+              <label for="card-expiry">Expiry Date</label>
+              <input type="text" id="card-expiry" placeholder="MM/YY" />
+            </div>
+            <div>
+              <label for="card-cvc">CVC</label>
+              <input type="text" id="card-cvc" placeholder="123" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="/Menu">Back to Menu</a>
+        <button onclick="checkout()">Place Order</button>
+      </div>
+    </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartList = document.getElementById("cart-list");
+      const totalPrice = document.getElementById("total-price");
+      const cardDetails = document.getElementById("card-details");
+      const paymentMethod = document.getElementById("payment-method");
+
+      function updateCartDisplay() {
+        cartList.innerHTML = "";
+        let total = 0;
+
+        if (cart.length === 0) {
+          cartList.innerHTML = `<li style="text-align:center;">Your cart is empty.</li>`;
+          totalPrice.textContent = "Total: $0.00";
+          return;
+        }
+
+        cart.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${item.name} - $${item.price.toFixed(2)}</span>
+            <button class="remove-btn" data-index="${index}">Remove</button>
+          `;
+          cartList.appendChild(li);
+          total += item.price;
+        });
+
+        totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+      }
+
+      cartList.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-btn")) {
+          const index = e.target.getAttribute("data-index");
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartDisplay();
+        }
+      });
+
+      paymentMethod.addEventListener("change", function () {
+        cardDetails.style.display =
+          paymentMethod.value === "card" ? "block" : "none";
+      });
+
+      function checkout() {
+        if (cart.length === 0) {
+          alert("Your cart is empty.");
+          return;
+        }
+
+        const method = paymentMethod.value;
+
+        if (method === "card") {
+          const number = document.getElementById("card-number").value.trim();
+          const name = document.getElementById("card-name").value.trim();
+          const expiry = document.getElementById("card-expiry").value.trim();
+          const cvc = document.getElementById("card-cvc").value.trim();
+
+          if (!number || !name || !expiry || !cvc) {
+            alert("Please fill in all card details.");
+            return;
+          }
+        }
+
+        alert("Thank you for your order! Payment method: " + method);
+        localStorage.removeItem("cart");
+        cart = [];
+        updateCartDisplay();
+      }
+
+      updateCartDisplay();
+      paymentMethod.dispatchEvent(new Event("change"));
+    </script>
+  </body>
+</html>

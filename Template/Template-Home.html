@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pizza & Burger Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #dc2626;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      header h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: text-decoration 0.3s ease;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+      }
+
+      .hero img,
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .hero-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-content h2 {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content h2 {
+          font-size: 3.5rem;
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .cta {
+        background-color: #fef08a;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .cta h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      .cta a {
+        display: inline-block;
+        background-color: #dc2626;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      .cta a:hover {
+        background-color: #b91c1c;
+      }
+
+      footer {
+        background-color: #111827;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero img,
+        .hero video {
+          object-position: center center;
+        }
+      }
+
+      .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* disables clicks on video */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Pizza & Burger Hub</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/Menu">Menu</a>
+        <a href="/Details">Details</a>
+        <a href="/Contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="video-container">
+        <!-- If you'd prefer to use a video, you can comment out the image and uncomment the video below -->
+        <!--
+        <video autoplay muted loop playsinline>
+          <source src="/Project01/img/3015488-hd_1920_1080_24fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        -->
+        <img
+          src="https://www.mashed.com/img/gallery/the-truth-about-pizza-huts-stuffed-crust-pizza/intro-1571237396.jpg"
+          alt="Delicious Pizza & Juicy Burgers"
+        />
+      </div>
+      <div class="hero-content">
+        <h2>Delicious Pizza & Juicy Burgers</h2>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <h3>Order Now and Get 20% Off!</h3>
+      <a href="/Menu">View Menu</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Pizza & Burger Hub. All Rights Reserved.</footer>
+  </body>
+</html>

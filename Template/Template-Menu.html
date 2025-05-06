@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Pizza & Burger Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
+      }
+
+      header {
+        background-color: #dc2626;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .menu-container {
+        padding: 2rem;
+      }
+
+      .menu-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #dc2626;
+        text-align: center;
+      }
+
+      .search-bar {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .search-bar_input {
+        width: 80%;
+        max-width: 400px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 2px solid #dc2626;
+        border-radius: 0.5rem;
+      }
+
+      .menu-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .menu-item {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .menu-item img {
+        max-width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .menu-item h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      .menu-item .price {
+        color: #16a34a;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .add-to-cart {
+        background-color: #dc2626;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .add-to-cart:hover {
+        background-color: #b91c1c;
+      }
+
+      .view-cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #dc2626;
+        color: white;
+        padding: 0.75rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        background-color: #111827;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Pizza & Burger Hub</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/Menu">Menu</a>
+        <a href="/Details">Details</a>
+        <a href="/Contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Menu Section -->
+    <div class="menu-container">
+      <section class="menu-section">
+        <h2>Pizza & Burger Menu</h2>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-bar_input"
+            placeholder="Search menu items..."
+          />
+        </div>
+
+        <!-- Product Cards -->
+        <div class="menu-items" id="menu-items">{%PRODUCT_CARDS%}</div>
+      </section>
+    </div>
+
+    <!-- View Cart Button -->
+    <a href="/Payment" class="view-cart">🛒 View Cart</a>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Pizza & Burger Hub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-bar_input");
+        if (searchInput === "") {
+          menuItems.forEach((item) => {
+            item.style.display = "none";
+          });
+        }
+
+        function filterItems() {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          const menuItems = document.querySelectorAll(".menu-item");
+
+          menuItems.forEach((item) => {
+            const name =
+              item.querySelector("h3")?.textContent.toLowerCase() || "";
+            const description =
+              item.querySelector("p")?.textContent.toLowerCase() || "";
+
+            const matches =
+              name.includes(searchTerm) || description.includes(searchTerm);
+            item.style.display = searchTerm === "" || matches ? "flex" : "none";
+          });
+        }
+
+        searchInput.addEventListener("input", filterItems);
+
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", () => {
+            const item = button.closest(".menu-item");
+            const name = item.querySelector("h3").textContent;
+            const price = parseFloat(
+              item.querySelector(".price").textContent.replace("$", "")
+            );
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price });
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(`${name} added to cart.`);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

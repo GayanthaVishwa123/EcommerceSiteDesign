@@ -1,0 +1,15 @@
+<div class="menu-item">
+  <img src="{%IMAGE%}" alt="Pizza" />
+  <div class="details">
+    <h3>{%NAME%}</h3>
+    <p class="price">${%PRICE%}</p>
+    <button class="add-to-cart" onclick="gotoPayment()">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  function gotoPayment() {
+    // Redirect to the payment page
+    window.location.href = "/Payment"; // Replace with your actual payment page URL
+  }
+</script>

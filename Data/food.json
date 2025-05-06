@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Cheese Burger",
+    "price": 5.99,
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349"
+  },
+  {
+    "name": "Pepperoni Pizza",
+    "price": 8.99,
+    "image": "https://againstthegraingourmet.com/cdn/shop/products/Pepperoni_Pizza_Beauty_300x.jpg?v=1658703726"
+  },
+  {
+    "name": "Veggie Delight Pizza",
+    "price": 7.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIOaTaRyxow2nJ274_YzT7Ta3X5FLrpaFnGw&s"
+  },
+  {
+    "name": "Spicy Chicken Wings",
+    "price": 6.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Y1aRgG4GV0Ft2AfMb3olomu6DE63L1O_Kw&s"
+  },
+  {
+    "name": "Double Cheese Pizza",
+    "price": 9.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZU9HRCOovIHFPa1wLbZY31RnNG4L9n1KKEQ&s"
+  },
+  {
+    "name": "BBQ Chicken Burger",
+    "price": 6.99,
+    "image": "https://www.ambitiouskitchen.com/wp-content/uploads/2019/07/chickenburgers-5-725x725.jpg"
+  },
+  {
+    "name": "Classic Margherita",
+    "price": 7.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmomF1DksRYo9MLTC6zi2qx1XjX7R5PSqPYQ&s"
+  },
+  {
+    "name": "Chicken Supreme Pizza",
+    "price": 9.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStte8nwJL6_B835Lk-HH_1V6bVLCM6vpPpqg&s"
+  },
+  {
+    "name": "Grilled Chicken Burger",
+    "price": 6.29,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs75fIPf8JBO43pwxFH0XRm0OjIVSEKTQO6Q&s"
+  },
+  {
+    "name": "Beef Bacon Burger",
+    "price": 7.49,
+    "image": "https://simply-delicious-food.com/wp-content/uploads/2015/07/Bacon-and-cheese-burgers-3-500x500.jpg"
+  },
+  {
+    "name": "Fries Regular",
+    "price": 2.99,
+    "image": "https://www.tefal-me.com/medias/Upgrade-your-regular-fries-with-our-3-recipes.jpg?context=bWFzdGVyfHJvb3R8MzkwOTAxfGltYWdlL2pwZWd8YURSakwyaGlNeTh4TXpBNU16ZzROVEUwT1RJeE5DNXFjR2N8NjliOGUyOTRhNjIzYTA0ZDc1NmM4MzkyYjRlOGFhM2E3ZmJkNzlhZWNiNTVkMWQ2NWM5Y2I2OGQyMTIyOGEzNg"
+  },
+  {
+    "name": "Onion Rings",
+    "price": 3.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt97Ljw5a9emkaWYZtwEN8JHiBUqlyBImhhg&s"
+  },
+  {
+    "name": "Garlic Bread",
+    "price": 3.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR58BZ5psF1_brVa35WZbx08Jp7XghAAxWR0A&s"
+  },
+  {
+    "name": "Coke Can",
+    "price": 1.49,
+    "image": "https://www.liquorbar.sg/images/2019/products/softdrinks/coca-cola-can.webp"
+  },
+  {
+    "name": "Pepsi Bottle",
+    "price": 1.99,
+    "image": "https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/497588_XL1_20240716.jpg?w=400&q=70"
+  },
+  {
+    "name": "Iced Tea",
+    "price": 2.49,
+    "image": "https://bakingmehungry.com/wp-content/uploads/2024/05/lipton-iced-tea-recipe-8.jpg"
+  },
+  {
+    "name": "Chicken Nuggets (6 pcs)",
+    "price": 4.99,
+    "image": "https://the7spices.com/wp-content/uploads/2023/12/Chicken_Nuggets.png"
+  },
+  {
+    "name": "Tandoori Pizza",
+    "price": 8.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNofI984yKlTAqsD4zoHrHQc7SAKWHR_nVVw&s"
+  },
+  {
+    "name": "Spicy Paneer Pizza",
+    "price": 7.89,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwc5ofUxzM2eLBt0WNos6kAJnkqo3RTJvlQ&s"
+  },
+  {
+    "name": "Choco Lava Cake",
+    "price": 3.59,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJYg-bd41gp07DGUmjqX24KYf9f6GMce3OEw&s"
+  },
+  {
+    "name": "Mozzarella Sticks",
+    "price": 4.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXyuRz8d85bF-Gcq58Et_e_5eMQezOdNgpOQ&s"
+  },
+  {
+    "name": "Fish Fillet Burger",
+    "price": 6.79,
+    "image": "https://images.sbs.com.au/dims4/default/b2caf25/2147483647/strip/true/crop/2309x1299+0+0/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2F54%2Fac%2F12c96abb413fb364f93ecfef90ff%2Frx041-recipe-frida-fillet-o-fish-burger-creditjiwonkim-tcus5-2.jpg"
+  },
+  {
+    "name": "Veggie Burger",
+    "price": 5.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTFz0Znuelzy2lrBkqnRH4ngD0LBxiv7_sHw&s"
+  },
+  {
+    "name": "Stuffed Crust Pizza",
+    "price": 10.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQimi7Z-KUj7GXHFsA1qIiNLBHin43gABp61A&s"
+  },
+  {
+    "name": "Sweet Corn Pizza",
+    "price": 7.69,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5eIXjhMgWNX_zxLQYfzZlxAQLMvROmvRRVg&s"
+  },
+  {
+    "name": "Pasta Alfredo",
+    "price": 8.59,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsQC88iH72zzTOkzH90zLlom17REze-Hm1w&s"
+  },
+  {
+    "name": "Pasta Arrabiata",
+    "price": 7.89,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdwFLcLXtF0EDTksWUozX-oqkNVqH9Srdx7w&s"
+  },
+  {
+    "name": "Cold Coffee",
+    "price": 2.99,
+    "image": "https://www.milkmaid.in/sites/default/files/2024-05/Cold-Coffee-335x300.jpg"
+  },
+  {
+    "name": "Vanilla Milkshake",
+    "price": 3.49,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWvw-71RnG21OGs_7SUvu0UrLOmpFDq2j5ag&s"
+  },
+  {
+    "name": "Brownie Sundae",
+    "price": 4.59,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfgFPrsXxgRl2WOtbrlF2uYwM5yinw7-UCjQ&s"
+  }
+]
